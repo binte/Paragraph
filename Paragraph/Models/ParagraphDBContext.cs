@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Configuration;
+
 
 namespace Paragraph.Models
 {
@@ -24,7 +26,7 @@ namespace Paragraph.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=tcp:azure20.database.windows.net,1433;Initial Catalog=ParagraphDB;Persist Security Info=False;User ID=adminAzure;Password=*****;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30");
+                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ParagraphDB"].ConnectionString);
             }
         }
 

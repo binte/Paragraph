@@ -16,10 +16,6 @@ namespace Paragraph.Models
         {
             try
             {
-                //var query = from para in Para
-                //            right join paraR in ParaRight on para.ParaId equals parar.ParaId
-                //            select new { ParaText = para.ParaText };
-
                 return db.Para.Where(p => db.ParaRight.Any(pr => pr.ParaId == p.ParaId)).Select(res => res.ParaText);
             }
             catch
