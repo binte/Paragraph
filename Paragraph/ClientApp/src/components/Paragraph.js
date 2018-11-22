@@ -6,7 +6,7 @@ const baseUrl = window.location.origin;
 function TextArea(props) {
     var text = props.paragraphs.join("")
     console.log("checking...", text)
-    return <textarea rows={props.paragraphs.length} type="text" value={text}></textarea>
+    return <textarea rows={props.paragraphs.length+1} type="text" value={text}></textarea>
 }
 
 function Item(props) {

@@ -1,5 +1,36 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 5%;
   font-family: sans-serif;
+  background-color: black;
+}
+
+select {
+    overflow: auto;
+}
+
+.myContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #888;
+}
+
+#btn_ok {
+    width: 10%;
+}
+
+.btn-arrow {
+    width: 50%;
 }
