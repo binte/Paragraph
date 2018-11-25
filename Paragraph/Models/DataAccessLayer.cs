@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Paragraph.Models
 {
@@ -24,13 +21,13 @@ namespace Paragraph.Models
             }
         }
 
-        public ActionResult Init()
+        public object Init()
         {
             try
             {
                 db.Database.ExecuteSqlCommand("dbo.ProcInit");
                 db.SaveChanges();
-                return new JsonResult(new { success = true });
+                return new { success = true };
             }
             catch
             {
@@ -39,12 +36,12 @@ namespace Paragraph.Models
         }
 
         // Get the data necessary to be shown (ParaLeft and ParaRight)
-        public ActionResult GetParaState()
+        public object GetParaState()
         {
             try
             {
                 var result = new { ParaLeft = db.ParaLeft.ToList(), ParaRight = db.ParaRight.ToList() };
-                return new JsonResult(result);
+                return result;
             }
             catch
             {
@@ -52,7 +49,7 @@ namespace Paragraph.Models
             }
         }
 
-        public ActionResult MoveLeft(int id)
+        public object MoveLeft(int id)
         {
             try
             {
@@ -60,7 +57,7 @@ namespace Paragraph.Models
                 db.Database.ExecuteSqlCommand("dbo.ProcMoveLeft @idParam", idParam);
                 db.SaveChanges();
 
-                return new JsonResult(new { success = true });
+                return new { success = true };
             }
             catch
             {
@@ -68,7 +65,7 @@ namespace Paragraph.Models
             }
         }
 
-        public ActionResult MoveRight(int id)
+        public object MoveRight(int id)
         {
             try
             {
@@ -76,7 +73,7 @@ namespace Paragraph.Models
                 db.Database.ExecuteSqlCommand("dbo.ProcMoveRight @IdParam", idParam);
                 db.SaveChanges();
 
-                return new JsonResult(new { success = true });
+                return new { success = true };
             }
             catch
             {

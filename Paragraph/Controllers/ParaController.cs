@@ -32,28 +32,28 @@ namespace Paragraph.Controllers
         [Route("Init")]
         public ActionResult Init()
         {
-            return accessLayer.Init();
+            return new JsonResult(accessLayer.Init());
         }
 
         [HttpGet]
         [Route("GetParaState")]
         public ActionResult GetParaState()
         {
-            return accessLayer.GetParaState();
+            return new JsonResult(accessLayer.GetParaState());
         }
 
         [HttpPost]
         [Route("MoveLeft")]
         public ActionResult MoveLeft([FromBody] IdPost obj)
         {
-            return accessLayer.MoveLeft(obj.Id);
+            return new JsonResult(accessLayer.MoveLeft(obj.Id));
         }
 
         [HttpPost]
         [Route("MoveRight")]
         public ActionResult MoveRight( [FromBody] IdPost obj)
         {
-            return accessLayer.MoveRight(obj.Id);
+            return new JsonResult(accessLayer.MoveRight(obj.Id));
         }
     }
 }
