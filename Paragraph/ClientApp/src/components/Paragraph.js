@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
 
-const baseUrl = window.location.origin;
-
 function TextArea(props) {
     var text = props.paragraphs.join("")
     console.log("checking...", text)
@@ -47,13 +45,13 @@ export default class Paragraph extends Component {
     async componentDidMount() {
         console.log("componentDidMount")
         axios
-            .get(`${baseUrl}/api/Para/Init`)
+            .get(`api/Para/Init`)
             .then(response => response.data)
             .then(data => {
                 console.log(data)
                 if (data.success) {
                     axios
-                        .get(`${baseUrl}/api/Para/GetParaState`)
+                        .get(`api/Para/GetParaState`)
                             .then(response => response.data)
                             .then(data => {
                                 console.log(data)
@@ -70,7 +68,7 @@ export default class Paragraph extends Component {
         console.log("handleClick OK")
         if (this.state.paraRight.length > 0) {
             axios
-                .get(`${baseUrl}/api/Para/GetParasText`)
+                .get(`api/Para/GetParasText`)
                 .then(response => response.data)
                 .then(data => {
                     var paragraphs = []
@@ -97,12 +95,12 @@ export default class Paragraph extends Component {
         if (id >= 0 && dest === 1 && dest === this.state.dest) {  // move to the right
             console.log("handleClickArrow R", id, dest, this.state.dest)
             axios
-                .post(`${baseUrl}/api/Para/MoveRight`, obj)
+                .post(`api/Para/MoveRight`, obj)
                 .then(response => response.data)
                 .then(data => {
                     if (data.success) {
                         axios
-                            .get(`${baseUrl}/api/Para/GetParaState`)
+                            .get(`api/Para/GetParaState`)
                             .then(response => response.data)
                             .then(data => {
                                 console.log(data)
@@ -121,13 +119,13 @@ export default class Paragraph extends Component {
         else if (id >= 0 && dest === 0 && dest === this.state.dest) {  // move to the left
             console.log("handleClickArrow L", id, dest, this.state.dest)
             axios
-                .post(`${baseUrl}/api/Para/MoveLeft`, obj)
+                .post(`api/Para/MoveLeft`, obj)
                 .then(response => response.data)
                 .then(data => {
                     console.log(data)
                     if (data.success) {
                         axios
-                            .get(`${baseUrl}/api/Para/GetParaState`)
+                            .get(`api/Para/GetParaState`)
                             .then(response => response.data)
                             .then(data => {
                                 console.log(data)
