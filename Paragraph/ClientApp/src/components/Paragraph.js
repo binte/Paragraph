@@ -141,30 +141,6 @@ export default class Paragraph extends Component {
                     }
                 });
         }
-
-        //let ind = this.state.indSelected
-        //if (ind >= 0 && this.state.dest === dest) {
-        //    if (dest === 1) {  // move to the right
-        //        let val = this.state.paraLeft[ind], aux = [...this.state.paraLeft]; // make a separate copy of the array
-        //        aux.splice(ind, 1)  // remove the element from the array copy
-        //        this.setState({
-        //            paraRight: this.state.paraRight.concat(val),
-        //            paraLeft: aux,
-        //            indSelected: -1,
-        //            dest: -1
-        //        })
-        //    }
-        //    else {  // move to the left
-        //        let val = this.state.paraRight[ind], aux = [...this.state.paraRight]; // make a separate copy of the array
-        //        aux.splice(ind, 1)  // remove the element from the array copy
-        //        this.setState({
-        //            paraLeft: this.state.paraLeft.concat(val),
-        //            paraRight: aux,
-        //            indSelected: -1,
-        //            dest: -1
-        //        })
-        //    }
-        //}
     }
 
     render() {
