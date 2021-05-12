@@ -25,7 +25,7 @@
     "hoek": "^6.1.2",
     "lodash": "^4.17.13",
     "macaddress": "^0.2.9",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "randomatic": "^3.1.1",
     "react-dev-utils": "^7.0.1",
     "sshpk": "^1.16.0",
