@@ -29,7 +29,7 @@
     "randomatic": "^3.1.1",
     "react-dev-utils": "^7.0.1",
     "sshpk": "^1.16.0",
-    "url-parse": "^1.4.4",
+    "url-parse": "^1.5.2",
     "webpack-dev-server": "^3.1.14"
   }
 }
